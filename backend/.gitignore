@@ -1,0 +1,6 @@
+# PocketBase binary + local data (each dev runs ./setup.sh)
+pocketbase
+pb_data/
+CHANGELOG.md
+LICENSE.md
+*.zip

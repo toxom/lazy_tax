@@ -65,5 +65,19 @@
 	"about_step3_desc": "Kuva, kuvakaappaus tai sovellusintegraatio. AI tarkistaa todisteen.",
 	"about_step4": "Maksa tai pidä",
 	"about_step4_desc": "Lipsu, ja panos menee hyväntekeväisyyteen. Pysy, ja pidät rahasi.",
-	"about_roadmap": "Tulossa: AI-kuvantarkistus, ruutuaika- ja terveysintegraatiot, kaverit valvojina."
+	"about_roadmap": "Tulossa: AI-kuvantarkistus, ruutuaika- ja terveysintegraatiot, kaverit valvojina.",
+	"auth_google": "Jatka Googlella",
+	"auth_or": "tai",
+	"auth_send_code": "Lähetä koodi",
+	"auth_code_sent": "Lähetimme 6-numeroisen koodin osoitteeseen {email}",
+	"auth_verify": "Vahvista",
+	"auth_change_email": "Käytä toista sähköpostia",
+	"auth_terms": "Jatkamalla hyväksyt käyttöehdot ja tietosuojakäytännön.",
+	"auth_logout": "Kirjaudu ulos",
+	"me_account": "Tili",
+	"err_invalid_email": "Anna kelvollinen sähköpostiosoite.",
+	"err_send_failed": "Koodin lähetys epäonnistui. Yritä uudelleen.",
+	"err_bad_code": "Väärä tai vanhentunut koodi.",
+	"err_oauth": "Google-kirjautuminen epäonnistui. Yritä uudelleen.",
+	"err_google_off": "Google-kirjautumista ei ole vielä otettu käyttöön. Käytä sähköpostia."
 }

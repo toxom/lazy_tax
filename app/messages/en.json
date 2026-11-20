@@ -65,5 +65,19 @@
 	"about_step3_desc": "Photo, screenshot, or an app integration. AI checks the proof.",
 	"about_step4": "Pay or keep",
 	"about_step4_desc": "Miss it and the stake goes to charity. Keep it and keep your money.",
-	"about_roadmap": "Coming: AI photo checks, screen time and health integrations, friends as referees."
+	"about_roadmap": "Coming: AI photo checks, screen time and health integrations, friends as referees.",
+	"auth_google": "Continue with Google",
+	"auth_or": "or",
+	"auth_send_code": "Send code",
+	"auth_code_sent": "We sent a 6-digit code to {email}",
+	"auth_verify": "Verify",
+	"auth_change_email": "Use another email",
+	"auth_terms": "By continuing you agree to the terms and privacy policy.",
+	"auth_logout": "Sign out",
+	"me_account": "Account",
+	"err_invalid_email": "Enter a valid email address.",
+	"err_send_failed": "Couldn't send the code. Try again.",
+	"err_bad_code": "Wrong or expired code.",
+	"err_oauth": "Google sign-in failed. Try again.",
+	"err_google_off": "Google sign-in isn't set up yet. Use email."
 }

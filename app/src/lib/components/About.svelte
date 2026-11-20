@@ -40,11 +40,6 @@
 		margin-bottom: 20px;
 	}
 
-	.logo {
-		color: var(--accent);
-		display: flex;
-	}
-
 	.tagline {
 		margin: 0;
 		font-size: 2rem;

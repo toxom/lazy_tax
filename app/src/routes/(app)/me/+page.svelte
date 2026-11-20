@@ -3,7 +3,8 @@
 	import { getLocale, setLocale, locales } from '#lib/paraglide/runtime.js';
 	import { settings, type Mode, type Accent, type Font } from '#lib/settings.svelte.js';
 	import Segmented from '#lib/components/Segmented.svelte';
-	import { Monitor, Sun, Moon } from '@lucide/svelte';
+	import { Monitor, Sun, Moon, LogOut } from '@lucide/svelte';
+	import { page } from '$app/state';
 
 	type Locale = (typeof locales)[number];
 
@@ -25,6 +26,17 @@
 	const fontLabels = { serif: m.font_serif, sans: m.font_sans };
 	const fontFamily = { serif: "'Playfair Display Variable', serif", sans: "'Inter Variable', sans-serif" };
 </script>
+
+<section>
+	<h2>{m.me_account()}</h2>
+	<div class="card account">
+		<span class="avatar">{(page.data.user?.email ?? '?')[0].toUpperCase()}</span>
+		<span class="email">{page.data.user?.email}</span>
+		<form method="POST" action="/auth/logout">
+			<button class="logout" aria-label={m.auth_logout()}><LogOut size={18} /></button>
+		</form>
+	</div>
+</section>
 
 <section>
 	<h2>{m.me_appearance()}</h2>
@@ -92,6 +104,37 @@
 	.aa {
 		font-size: 1.125rem;
 		font-weight: 500;
+	}
+
+	.account {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.avatar {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		background: var(--accent);
+		color: var(--bg);
+		font-weight: 600;
+	}
+
+	.email {
+		flex: 1;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.logout {
+		display: flex;
+		padding: 8px;
+		color: var(--muted);
 	}
 
 	.flag {

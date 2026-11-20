@@ -1,0 +1,170 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/playfair-display';
+@import '@fontsource-variable/playfair-display/wght-italic.css';
+
+/* ---------- Theme tokens ---------- */
+:root,
+[data-mode='light'] {
+	--bg: #fbfaf7;
+	--surface: #f2f0eb;
+	--text: #14161c;
+	--muted: #6b6e76;
+	--border: rgba(20, 22, 28, 0.09);
+	--danger: #c43b3b;
+	--accent: #0f8f75;
+	color-scheme: light;
+}
+
+[data-mode='dark'] {
+	--bg: #0b0d14;
+	--surface: #151824;
+	--text: #eceef3;
+	--muted: #8b90a0;
+	--border: rgba(255, 255, 255, 0.09);
+	--danger: #f06a6a;
+	--accent: #1fae8c;
+	color-scheme: dark;
+}
+
+[data-accent='violet'][data-mode='light'] {
+	--accent: #6d4fd8;
+}
+
+[data-accent='violet'][data-mode='dark'] {
+	--accent: #9b87f5;
+}
+
+:root {
+	--success: var(--accent);
+	--font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
+	--font-display: 'Playfair Display Variable', Georgia, serif;
+	--radius: 12px;
+	--topbar-h: 56px;
+	--tabbar-h: 60px;
+}
+
+[data-font='sans'] {
+	--font-display: var(--font-body);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+.display {
+	font-family: var(--font-display);
+	font-weight: 500;
+	letter-spacing: -0.01em;
+}
+
+[data-font='sans'] h1,
+[data-font='sans'] h2,
+[data-font='sans'] .display {
+	font-weight: 650;
+	letter-spacing: -0.02em;
+}
+
+em.accent {
+	color: var(--accent);
+	font-style: italic;
+}
+
+html,
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	transition:
+		background-color 200ms,
+		color 200ms;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	overscroll-behavior-y: none;
+}
+
+button {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.card {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 14px 16px;
+}
+
+.muted {
+	color: var(--muted);
+	font-size: 0.875rem;
+}
+
+/* ---------- Motion ---------- */
+:root {
+	--ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* In-page: tap feedback on anything tappable */
+button,
+a {
+	transition:
+		transform 120ms var(--ease-out),
+		opacity 120ms var(--ease-out);
+}
+
+button:active,
+a:active {
+	transform: scale(0.97);
+	opacity: 0.85;
+}
+
+/* Page switch: bars stay put, content fades + rises */
+header {
+	view-transition-name: topbar;
+}
+
+nav {
+	view-transition-name: tabbar;
+}
+
+::view-transition-old(root) {
+	animation: vt-out 120ms var(--ease-out) both;
+}
+
+::view-transition-new(root) {
+	animation: vt-in 200ms var(--ease-out) both;
+}
+
+@keyframes vt-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes vt-in {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+		transition: none !important;
+	}
+}
